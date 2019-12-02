@@ -4,7 +4,7 @@ type Teller struct {
 }
 
 func (teller Teller) say(words []byte) {
-	return
+	//Pretend this makes it talk
 }
 
 func (teller Teller) Tell(story Story) error {
