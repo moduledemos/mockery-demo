@@ -16,9 +16,9 @@ func TestTeller_Tell(t *testing.T) {
 	story.On("ReadChapter", mock.Anything).Return(
 		[]byte(":)"), nil).Times(noChapters)
 	for i := 0; i < noChapters; i++ {
-		story.On("HasChapter", i).Return(true)
+		story.On("HasChapter", i).Return(true).Once()
 	}
-	story.On("HasChapter", noChapters).Return(false)
+	story.On("HasChapter", noChapters).Return(false).Once()
 	err := teller.Tell(story)
 	assert.NoError(t, err)
 
